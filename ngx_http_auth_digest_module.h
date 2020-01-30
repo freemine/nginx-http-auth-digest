@@ -50,13 +50,6 @@ typedef struct {
   ngx_rbtree_node_t node; // the node's .key is derived from the source address
   time_t drop_time;
   ngx_int_t failcount;
-  /*
-  union {
-    struct sockaddr     sa;
-    struct sockaddr_in  si;
-    struct sockaddr_in6 s6;
-  } src_addr;
-  */
   ngx_sockaddr_t src_addr;
   socklen_t src_addrlen;
 } ngx_http_auth_digest_ev_node_t;
