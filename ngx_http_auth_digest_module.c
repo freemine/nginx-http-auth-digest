@@ -1056,7 +1056,7 @@ ngx_http_auth_digest_ev_rbtree_cmp(const ngx_rbtree_node_t *v_left,
     ngx_http_auth_digest_ev_node_t *evright =
         (ngx_http_auth_digest_ev_node_t *)v_right;
     return ngx_http_auth_digest_srcaddr_cmp(
-        &evleft->src_addr, evleft->src_addrlen, &evright->src_addr,
+        &evleft->src_addr.sockaddr, evleft->src_addrlen, &evright->src_addr.sockaddr,
         evright->src_addrlen);
   }
   return (v_left->key < v_right->key) ? -1 : 1;
